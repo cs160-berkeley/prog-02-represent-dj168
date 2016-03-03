@@ -1,0 +1,62 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:padding="6dip">
+
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/portrait"
+        android:src="@drawable/dianne"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="10dp" />
+
+    <TextView
+        android:layout_width="200dp"
+        android:layout_height="20dp"
+        android:text="Senator"
+        android:id="@+id/senator"
+
+        android:layout_marginLeft="120dp"
+        android:gravity="left"
+        android:layout_marginTop="130dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/name1"
+        android:layout_marginLeft="120dp"
+        android:layout_marginTop="150dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Party"
+        android:id="@+id/party"
+        android:layout_marginLeft="120dp"
+        android:layout_marginTop="170dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="5th Term 2012-2016"
+        android:id="@+id/term"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="200dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Committees:"
+        android:id="@+id/committees"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="220dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bills Sponsored:"
+        android:id="@+id/bills"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="300dp" />
+
+</RelativeLayout>
