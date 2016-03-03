@@ -8,7 +8,7 @@ Derrick Hu ([huderrick@berkeley.edu](mailto:huderrick@berkeley.edu))
 
 ## Demo Video
 
-See [YouVote!] (https://youtu.be/EwTE4yJujNY)
+See [YouVote!] (https://youtu.be/vHBCgQIweSY)
 
 ## Screenshots
 
