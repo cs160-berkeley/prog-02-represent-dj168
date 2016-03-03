@@ -12,14 +12,14 @@ See [YouVote!] (https://youtu.be/EwTE4yJujNY)
 
 ## Screenshots
 
-<img src="screenshots/ss1.jpg" height="400" alt="Screenshot"/>
-<img src="screenshots/ss2.jpg" height="400" alt="Screenshot"/>
-<img src="screenshots/ss3.jpg" height="400" alt="Screenshot"/>
-<img src="screenshots/ss4.jpg" height="400" alt="Screenshot"/>
-<img src="screenshots/ss5.jpg" height="400" alt="Screenshot"/>
-<img src="screenshots/ss6.jpg" height="400" alt="Screenshot"/>
-<img src="screenshots/ss7.jpg" height="400" alt="Screenshot"/>
-<img src="screenshots/ss8.jpg" height="400" alt="Screenshot"/>
+<img src="screenshots/ss1.png" height="400" alt="Screenshot"/>
+<img src="screenshots/ss2.png" height="400" alt="Screenshot"/>
+<img src="screenshots/ss3.png" height="400" alt="Screenshot"/>
+<img src="screenshots/ss4.png" height="400" alt="Screenshot"/>
+<img src="screenshots/ss5.png" height="400" alt="Screenshot"/>
+<img src="screenshots/ss6.png" height="400" alt="Screenshot"/>
+<img src="screenshots/ss7.png" height="400" alt="Screenshot"/>
+<img src="screenshots/ss8.png" height="400" alt="Screenshot"/>
 
 ## Acknowledgments
 
