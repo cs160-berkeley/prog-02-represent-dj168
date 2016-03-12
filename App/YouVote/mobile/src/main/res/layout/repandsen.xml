@@ -8,55 +8,107 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:id="@+id/dianne"
-        android:src="@drawable/dianne"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="10dp" />
 
-    <TextView
-        android:layout_width="200dp"
-        android:layout_height="20dp"
-        android:text="Senator"
-        android:id="@+id/senator"
-
-        android:layout_marginLeft="120dp"
-        android:gravity="left" />
-
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Party"
-        android:id="@+id/party"
-        android:layout_marginLeft="120dp"
-        android:layout_marginTop="20dp" />
+        android:orientation="vertical"
+        android:layout_toEndOf="@+id/dianne">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Website"
-        android:id="@+id/website"
-        android:layout_marginLeft="120dp"
-        android:layout_marginTop="40dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="200dp"
+                android:layout_height="20dp"
+                android:text="Senator"
+                android:id="@+id/senator"
+                android:textColor="#FFFFFF"
+                android:gravity="left" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/name"
+                android:textColor="#FFFFFF" />
+        </LinearLayout>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Email"
-        android:id="@+id/email"
-        android:layout_marginLeft="120dp"
-        android:layout_marginTop="55dp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/name"
-        android:layout_marginLeft="180dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="5dp">
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/website"
+                android:id="@+id/websiteImg"
+                android:layout_gravity="left"
+                android:layout_marginTop="5dp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="3dp"
+                android:text="Website"
+                android:id="@+id/website"
+                android:gravity="left"
+                android:autoLink="web"
+                android:textColor="#FFFFFF"
+                />
+        </LinearLayout>
 
-    <TextView
-        android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="5dp">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/email"
+                android:id="@+id/emailImg" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Email"
+                android:id="@+id/email"
+                android:autoLink="email"
+                android:padding="3dp"
+                android:textColor="#FFFFFF"
+                />
+        </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Twitter"
-        android:id="@+id/twitter"
-        android:layout_marginLeft="120dp"
-        android:layout_marginTop="70dp" />
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp">
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/twitter"
+            android:id="@+id/twitterImg"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Twitter"
+            android:padding="3dp"
+            android:textColor="#FFFFFF"
+            android:id="@+id/twitter" />
+
+    </LinearLayout>
+
+    </LinearLayout>
+
+
 
 </RelativeLayout>

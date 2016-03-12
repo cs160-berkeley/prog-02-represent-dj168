@@ -24,10 +24,10 @@ public class Main2Activity extends Activity {
         setContentView(R.layout.activity_main2);
 
         Bundle extras = getIntent().getExtras();
-        String zip = extras.getString("ZIP_CODE");
-        final GridViewPager pager = (GridViewPager) findViewById(R.id.pager);
-        pager.setAdapter(new GridPagerAdapter(this, getFragmentManager(), zip));
 
+        String repData = extras.getString("REP_DATA");
+        final GridViewPager pager = (GridViewPager) findViewById(R.id.pager);
+        pager.setAdapter(new GridPagerAdapter(this, getFragmentManager(), repData));
 
         mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         mSensorListener = new ShakeEventListener();
@@ -38,18 +38,12 @@ public class Main2Activity extends Activity {
                 int randZip = rand.nextInt(99999 - 10000 + 1) + 10000;
                 String randZipString = Integer.toString(randZip);
 
-                //Send intent to 3 reps on watch with new zipcode
-                selfIntent = new Intent(getBaseContext(), Main2Activity.class);
-                selfIntent.putExtra("ZIP_CODE", randZipString);
-                startActivity(selfIntent);
-
                 //Send intent to Phone to reload everything
                 sendIntent2 = new Intent(getBaseContext(), WatchToPhoneService.class);
                 sendIntent2.putExtra("ZIP_CODE", randZipString);
                 startService(sendIntent2);
             }
         });
-
     }
 
     @Override

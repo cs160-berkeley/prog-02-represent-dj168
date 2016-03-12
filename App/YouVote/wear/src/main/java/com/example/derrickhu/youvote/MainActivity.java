@@ -34,7 +34,6 @@ public class MainActivity extends Activity {
                 int randZip = rand.nextInt(99999 - 10000 + 1) + 10000;
                 String randZipString = Integer.toString(randZip);
 
-                System.out.println(randZip);
                 //Send intent to 3 reps on watch with new zipcode
                 selfIntent = new Intent(getBaseContext(), Main2Activity.class);
                 selfIntent.putExtra("ZIP_CODE", randZipString);
@@ -44,9 +43,6 @@ public class MainActivity extends Activity {
                 sendIntent2 = new Intent(getBaseContext(), WatchToPhoneService.class);
                 sendIntent2.putExtra("ZIP_CODE", randZipString);
                 startService(sendIntent2);
-
-
-                //Toast.makeText(KPBActivityImpl.this, "Shake!", Toast.LENGTH_SHORT).show();
             }
         });
 

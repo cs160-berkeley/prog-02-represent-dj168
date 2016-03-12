@@ -15,9 +15,7 @@ import com.google.android.gms.wearable.Wearable;
  * Created by derrickhu on 2/26/16.
  */
 public class PhoneToWatchService extends Service {
-
     private GoogleApiClient mApiClient;
-
     @Override
     public void onCreate() {
         super.onCreate();
@@ -35,7 +33,6 @@ public class PhoneToWatchService extends Service {
                 })
                 .build();
     }
-
     @Override
     public void onDestroy() {
         super.onDestroy();
@@ -47,14 +44,21 @@ public class PhoneToWatchService extends Service {
         // Which cat do we want to feed? Grab this info from INTENT
         // which was passed over when we called startService
         Bundle extras = intent.getExtras();
+        final String repData = extras.getString("REP_DATA");
         final String zipCode = extras.getString("ZIP_CODE");
+        final String countyAndState = extras.getString("COUNTY_STATE");
+        final String obamaVote = extras.getString("OBAMA_VOTE");
+        //final byte[] byteArray = extras.getByteArray("IMAGE");
+        //final Bitmap bmp = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
+
         new Thread(new Runnable() {
             @Override
             public void run() {
                 //first, connect to the apiclient
                 mApiClient.connect();
                 //now that you're connected, send a massage with the cat name
-                sendMessage("/ZIP_CODE" , zipCode);
+                String message = repData + "!" + zipCode + "!" + countyAndState + "!" + obamaVote;
+                sendMessage("/REP_DATA", message);
                 //change new mssage
             }
         }).start();

@@ -3,6 +3,9 @@
     package="com.example.derrickhu.youvote">
 
     <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -47,6 +50,13 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.derrickhu.youvote.MainActivity" />
         </activity>
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyBR4N75a508ZhD6D6GoBmE_K-TPog_rclc"/>
+
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="85019e56da0d313edb1c08faede8222697fddb77" />
     </application>
 
 </manifest>

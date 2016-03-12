@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 
@@ -28,13 +27,17 @@ public class RepFragment extends Fragment {
     private static final String ARG_PARAM3 = "param3";
     private static final String ARG_PARAM4 = "param4";
     private static final String ARG_PARAM5 = "param5";
+    private static final String ARG_PARAM6 = "param6";
+
 
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
     private String mParam3;
     private String mParam4;
-    private int mParam5;
+    private String mParam5;
+    private String mParam6;
+
 
 
 
@@ -53,14 +56,15 @@ public class RepFragment extends Fragment {
      * @return A new instance of fragment RepFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static RepFragment newInstance(String param1, String param2, String param3, String param4, int param5) {
+    public static RepFragment newInstance(String param1, String param2, String param3, String param4, String param5, String param6) {
         RepFragment fragment = new RepFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
         args.putString(ARG_PARAM3, param3);
         args.putString(ARG_PARAM4, param4);
-        args.putInt(ARG_PARAM5, param5);
+        args.putString(ARG_PARAM5, param5);
+        args.putString(ARG_PARAM6, param6);
         fragment.setArguments(args);
         return fragment;
     }
@@ -73,7 +77,8 @@ public class RepFragment extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
             mParam3 = getArguments().getString(ARG_PARAM3);
             mParam4 = getArguments().getString(ARG_PARAM4);
-            mParam5 = getArguments().getInt(ARG_PARAM5);
+            mParam5 = getArguments().getString(ARG_PARAM5);
+            mParam6 = getArguments().getString(ARG_PARAM6);
         }
     }
 
@@ -84,27 +89,48 @@ public class RepFragment extends Fragment {
         // Inflate the layout for this fragment
         View v = (View) inflater.inflate(R.layout.fragment_rep, container, false);
 
-        ImageView pictureView = (ImageView) v.findViewById(R.id.portrait);
         TextView repOr2012 = (TextView) v.findViewById(R.id.repOr2012);
-        TextView partyOrState = (TextView) v.findViewById(R.id.partyOrState);
-        TextView stateOrDistrict = (TextView) v.findViewById(R.id.stateOrDistrict);
-        TextView nameOrPercent = (TextView) v.findViewById(R.id.nameOrPercent);
+        TextView zipCodeView = (TextView) v.findViewById(R.id.zipCode);
 
-        pictureView.setImageResource(mParam5);
         repOr2012.setText(mParam1);
+        TextView partyOrState = (TextView) v.findViewById(R.id.partyOrState);
         partyOrState.setText(mParam2);
-        stateOrDistrict.setText(mParam3);
-        nameOrPercent.setText(mParam4);
+        if (mParam6.length() == 5) {
+            zipCodeView.setText("Swipe down for 2012 Presidential Election Results for " +  mParam6);
+        }
+        else {
+            zipCodeView.setText(mParam6);
+        }
+        TextView stateOrDistrict = (TextView) v.findViewById(R.id.stateOrDistrict);
+        if (mParam3 != "") {
+            stateOrDistrict.setText("Obama: " + mParam3 + "%");
+        }
+        TextView nameOrPercent = (TextView) v.findViewById(R.id.nameOrPercent);
+        if (mParam4 != "") {
+            nameOrPercent.setText("Romney: " + mParam4 + "%");
+        }
+
+        //
+        //zipCodeView.setText(mParam6);
+
+//        ImageView pictureView = (ImageView) v.findViewById(R.id.portrait);
+//        TextView repOr2012 = (TextView) v.findViewById(R.id.repOr2012);
+//        TextView partyOrState = (TextView) v.findViewById(R.id.partyOrState);
+//        TextView stateOrDistrict = (TextView) v.findViewById(R.id.stateOrDistrict);
+//        TextView nameOrPercent = (TextView) v.findViewById(R.id.nameOrPercent);
+//
+//        repOr2012.setText(mParam1);
+//        partyOrState.setText(mParam2);
+//        stateOrDistrict.setText(mParam3);
 
         v.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!mParam1.equals("2012 Presidential Election")) {
-                    Context context = v.getContext();
-                    Intent sendIntent = new Intent(context, WatchToPhoneService.class);
-                    sendIntent.putExtra("NAME", mParam4);
-                    context.startService(sendIntent);
-                }
+                Context context = v.getContext();
+                Intent sendIntent = new Intent(context, WatchToPhoneService.class);
+                sendIntent.putExtra("BIOGUIDEID", mParam5);
+                context.startService(sendIntent);
+
 
             }
         });
@@ -114,41 +140,12 @@ public class RepFragment extends Fragment {
     }
 
 
-//
-//    // TODO: Rename method, update argument and hook method into UI event
-//    public void onButtonPressed(Uri uri) {
-//        if (mListener != null) {
-//            mListener.onFragmentInteraction(uri);
-//        }
-//    }
-//
-//    @Override
-//    public void onAttach(Context context) {
-//        super.onAttach(context);
-//        if (context instanceof OnFragmentInteractionListener) {
-//            mListener = (OnFragmentInteractionListener) context;
-//        } else {
-//            throw new RuntimeException(context.toString()
-//                    + " must implement OnFragmentInteractionListener");
-//        }
-//    }
-
     @Override
     public void onDetach() {
         super.onDetach();
         mListener = null;
     }
 
-    /**
-     * This interface must be implemented by activities that contain this
-     * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
-     * <p/>
-     * See the Android Training lesson <a href=
-     * "http://developer.android.com/training/basics/fragments/communicating.html"
-     * >Communicating with Other Fragments</a> for more information.
-//     */
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
