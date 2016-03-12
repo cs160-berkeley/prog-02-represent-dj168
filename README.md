@@ -8,18 +8,20 @@ Derrick Hu ([huderrick@berkeley.edu](mailto:huderrick@berkeley.edu))
 
 ## Demo Video
 
-See [YouVote!] (https://youtu.be/vHBCgQIweSY)
+See [YouVote!] (https://www.youtube.com/watch?v=UcLJXGkGWb4&feature=youtu.be)
 
 ## Screenshots
 
-<img src="screenshots/ss1.png" height="400" alt="Screenshot"/>
-<img src="screenshots/ss2.png" height="400" alt="Screenshot"/>
-<img src="screenshots/ss3.png" height="400" alt="Screenshot"/>
-<img src="screenshots/ss4.png" height="400" alt="Screenshot"/>
-<img src="screenshots/ss5.png" height="400" alt="Screenshot"/>
-<img src="screenshots/ss6.png" height="400" alt="Screenshot"/>
-<img src="screenshots/ss7.png" height="400" alt="Screenshot"/>
-<img src="screenshots/ss8.png" height="400" alt="Screenshot"/>
+<img src="screenshots/s1.png" height="400" alt="Screenshot"/>
+<img src="screenshots/s2.png" height="400" alt="Screenshot"/>
+<img src="screenshots/s3.png" height="400" alt="Screenshot"/>
+<img src="screenshots/s4.png" height="400" alt="Screenshot"/>
+<img src="screenshots/s5.png" height="400" alt="Screenshot"/>
+<img src="screenshots/s6.png" height="400" alt="Screenshot"/>
+<img src="screenshots/s7.png" height="400" alt="Screenshot"/>
+<img src="screenshots/s8.png" height="400" alt="Screenshot"/>
+<img src="screenshots/s9.png" height="400" alt="Screenshot"/>
+<img src="screenshots/s10.png" height="400" alt="Screenshot"/>
 
 ## Acknowledgments
 
@@ -30,4 +32,6 @@ http://stackoverflow.com/questions/2317428/android-i-want-to-shake-it
 
 Thank you Lars Vogel:
 http://www.vogella.com/tutorials/AndroidListView/article.html
+
+Thank you to Google Maps API and Sunlight Foundation and Twitter!
 
